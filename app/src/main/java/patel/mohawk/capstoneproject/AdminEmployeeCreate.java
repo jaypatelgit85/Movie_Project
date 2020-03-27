@@ -48,6 +48,7 @@ public class AdminEmployeeCreate extends AppCompatActivity {
     ArrayList<EditText> temp;
     DataVerification dataVerification;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +61,7 @@ public class AdminEmployeeCreate extends AppCompatActivity {
         temp.add(userEmail);
         temp.add(userPassword);
         temp.add(phoneNumber);
-        dataVerification = new DataVerification(temp, true);
+        dataVerification = new DataVerification(temp, true, getBaseContext());
         firstMethod(temp);
 
     }

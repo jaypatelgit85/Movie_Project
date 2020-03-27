@@ -3,6 +3,7 @@ package patel.mohawk.capstoneproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Button signIn;
     FirebaseAuth auth;
     FirebaseUser user;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void login(View view) {
+        progressDialog = new ProgressDialog(MainActivity.this,
+                R.style.Theme_AppCompat_DayNight_Dialog);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage("Authenticating...");
+        progressDialog.show();
         auth=FirebaseAuth.getInstance();
         auth.signInWithEmailAndPassword(userEmail.getText().toString(),userPassword.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -113,10 +120,14 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("Sign In", "signInWithEmail:success");
                             user = auth.getCurrentUser();
+                            new android.os.Handler().postDelayed(
+                                    new Runnable() {
+                                        public void run() {
+                                            progressDialog.dismiss();
+                                            callOtherFunction();
+                                        }
+                                    }, 3000);
 
-                                Toast.makeText(MainActivity.this, "Sign In Succesful", Toast.LENGTH_SHORT).show();
-
-                                    callOtherFunction();
 
 
                         } else {
@@ -124,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
                             Log.w("Sign In", "signInWithEmail:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+
+                            userPassword.setError("Check Username and password combination");
                         }
 
 
@@ -158,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 } else {
-
+                    progressDialog.cancel();
                 }
             }
         });

@@ -49,7 +49,6 @@ import patel.mohawk.capstoneproject.RecyclerViewAdapter;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-    private int jay;
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<Bitmap> mImages = new ArrayList<>();
     private RequestQueue requestQueue;

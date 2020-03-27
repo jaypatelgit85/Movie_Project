@@ -42,7 +42,7 @@ public class SignUp extends AppCompatActivity {
         temp.add(userPassword);
         temp.add(phoneNumber);
 
-        dataVerification = new DataVerification(temp,false);
+        dataVerification = new DataVerification(temp, false, getApplicationContext());
         abc();
 
     }

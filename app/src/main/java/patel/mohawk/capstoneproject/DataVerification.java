@@ -1,5 +1,8 @@
 package patel.mohawk.capstoneproject;
 // I Jay Kumar Patel,000744834 have done this assignment by my own and haven't copied it from anywhere.
+
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.net.Uri;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -7,6 +10,8 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -24,14 +29,17 @@ import java.util.Map;
 
 class DataVerification{
 
+    ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
     SignUp signUp=new SignUp();
     private ArrayList<EditText> userData;
     private boolean isEmployee;
+    Context context;
 
-    DataVerification(ArrayList<EditText> temp,boolean isEmployee) {
+    DataVerification(ArrayList<EditText> temp, boolean isEmployee, Context context) {
         userData = temp;
         this.isEmployee = isEmployee;
+        this.context = context;
     }
 
     /**
@@ -139,6 +147,7 @@ class DataVerification{
      */
     boolean createAccount() {
         mAuth=FirebaseAuth.getInstance();
+
         try {
             Log.d("Flag","in create account try");
             mAuth.createUserWithEmailAndPassword(userData.get(1).getText().toString(), userData.get(2).getText().toString())
@@ -154,6 +163,9 @@ class DataVerification{
 
                                 // If sign in fails, display a message to the user.
                                 Log.w("Create User", "createUserWithEmail:failure", task.getException());
+                            } else {
+
+                                Toast.makeText(signUp, "Unable to create User Please check Details", Toast.LENGTH_SHORT).show();
                             }
 
                             // ...
