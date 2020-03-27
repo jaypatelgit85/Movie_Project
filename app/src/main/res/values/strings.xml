@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Capstone Project</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="mobile_number">Mobile Number</string>
+
+    <string name="enter_security_question">Enter Security Question</string>
+    <string name="security_question_answer">Security Question Answer</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_a_member_log_in">Already a member? Log In</string>
+    <string name="forgot_your_password">Forgot Your Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="profile">Profile</string>
+    <string name="profile_settings">Profile Settings</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="home">Home</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_employee_account">CReate Employee Account</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="add_to_fav">Add To Fav</string>
+    <string name="reviews">Reviews</string>
+    <string name="rent">Rent</string>
+    <string name="add_reviews">Add Reviews</string>
+    <string name="go_to_user_home_page">Go To User Home Page</string>
+    <string name="manage_employees">Manage Employees</string>
+    <string name="add_new_employee">Add New Employee</string>
+    <string name="manage_users">Manage Users</string>
+    <string name="add_new_movies">Add New Movies</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="remove_from_rent">Remove From Rent</string>
+    <string name="remove_from_fav">Remove From Fav</string>
+    <string name="delete_user">Delete User</string>
+    <string name="disable_account">Disable Account</string>
+    <string name="movies_on_rent">Movies On rent</string>
+    <string name="delete_profile">Delete Profile</string>
+    <string name="enter_movie_name">Enter Movie Name</string>
+    <string name="enter_plot_details">Enter Plot Details</string>
+    <string name="enter_awards">Enter Awards</string>
+    <string name="enter_ratings">Enter Ratings</string>
+    <string name="email_address">Email Address</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="new_user">New User</string>
+    <string name="enter_movie_name_here">Enter Movie Name Here</string>
+    <string name="favourite_movies">Favourite Movies</string>
+    <string name="capstone_project">Capstone Project</string>
+
+
+</resources>
